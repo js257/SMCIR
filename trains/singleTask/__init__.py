@@ -1,0 +1,2 @@
+
+from .SMCIR import SMCIR

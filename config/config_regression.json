@@ -1,0 +1,104 @@
+{
+  "datasetCommonParams": {
+    "dataset_root_dir": "/media/cjs/a4208921-d8a3-41bd-9da2-9e7319a43785/cjs-first-paper/datasets/",
+    "mosi": {
+      "aligned": {
+        "featurePath": "CMU-MOSI-MMSA/Processed/aligned_50.pkl",
+        "seq_lens": [50, 50, 50],
+        "feature_dims": [768, 20, 5],
+        "train_samples": 1284,
+        "num_classes": 3,
+        "language": "en",
+        "KeyEval": "Loss",
+        "missing_rate": [0.2, 0.2, 0.2],
+        "missing_seed": [1111, 1111, 1111]
+      },
+      "unaligned": {
+        "featurePath": "CMU-MOSI-MMSA/Processed/unaligned_50.pkl",
+        "seq_lens": [50, 500, 375],
+        "feature_dims": [768, 20, 5],
+        "train_samples": 1284,
+        "num_classes": 3,
+        "language": "en",
+        "KeyEval": "Loss",
+        "missing_rate": [0.2, 0.2, 0.2],
+        "missing_seed": [1111, 1111, 1111]
+      }
+    },
+    "mosei": {
+      "aligned": {
+        "featurePath": "MOSEI/Processed/aligned_50.pkl",
+        "seq_lens": [50, 50, 50],
+        "feature_dims": [768, 35, 74],
+        "train_samples": 16326,
+        "num_classes": 3,
+        "language": "en",
+        "KeyEval": "Loss",
+        "missing_rate": [0.2, 0.2, 0.2],
+        "missing_seed": [1111, 1111, 1111]
+      },
+      "unaligned": {
+        "featurePath": "CMU-MOSEI-MMSA/unaligned_50-003.pkl",
+        "seq_lens": [50, 500, 500],
+        "feature_dims": [768, 35, 74],
+        "train_samples": 16326,
+        "num_classes": 3,
+        "language": "en",
+        "KeyEval": "Loss",
+        "missing_rate": [0.2, 0.2, 0.2],
+        "missing_seed": [1111, 1111, 1111]
+      }
+    }
+  },
+
+  "smcir":{
+    "commonParams": {
+      "need_data_aligned": false,
+      "need_model_aligned": false,
+      "need_normalized": false,
+      "use_bert": true,
+      "use_finetune": true,
+      "early_stop": 8
+    },
+    "datasetParams": {
+      "mosi": {
+        "pretrained": "/media/cjs/a4208921-d8a3-41bd-9da2-9e7319a43785/cjs-first-paper/pretrained-model/bert-base-uncased",
+        "Flag_S": 0,
+        "learning_rate":2e-5,
+        "weight_decay":0.0001,
+        "max_grad_norm":2,
+        "adam_epsilon":3e-8,
+        "batch_size":64,
+        "hidden1": 128,
+        "hidden2": 256,
+        "num_layers": 4,
+        "transformer_layers": 2,
+        "out_dim": 128,
+        "alpha": 0.5,
+        "beta": 0.3,
+        "gamma": 10,
+        "lbda": 0.8,
+        "eta": 0.6
+      },
+      "mosei":{
+        "pretrained": "/media/cjs/a4208921-d8a3-41bd-9da2-9e7319a43785/cjs-first-paper/pretrained-model/bert-base-uncased",
+        "Flag_S": 0,
+        "learning_rate":1e-5,
+        "weight_decay":0.0001,
+        "max_grad_norm":2,
+        "adam_epsilon":1e-8,
+        "batch_size":64,
+        "hidden1": 128,
+        "hidden2": 256,
+        "num_layers": 4,
+        "transformer_layers": 2,
+        "out_dim": 128,
+        "alpha": 0.5,
+        "beta": 0.3,
+        "gamma": 10,
+        "lbda": 0.8,
+        "eta": 0.4
+      }
+    }
+  }
+}
